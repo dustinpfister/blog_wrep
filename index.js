@@ -1,7 +1,18 @@
 let yargs = require('yargs');
 
-yargs.
+yargs
 
-command(require('./commands/default.js')).
+// default command
+.command(require('./commands/default.js'))
 
-argv
+// generate command
+.command(require('./commands/generate.js'))
+
+.option('target', {
+
+    alias: 't',
+    default:process.cwd()
+
+})
+
+.argv
